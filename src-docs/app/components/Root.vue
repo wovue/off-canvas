@@ -2,7 +2,7 @@
   <div>
     <sidebar></sidebar>
     <router-view></router-view>
-    <gh-corner repo-user="wovue" repo-name="off-canvas" color="#EAE8EB" background="#dd5a6f"></gh-corner>
+    <gh-corner repo-user="wovue" repo-name="off-canvas" color="#E6E8EA" background="#35495E"></gh-corner>
   </div>
 </template>
 
