@@ -1,0 +1,21 @@
+body {
+  font: 1em/1.35 "Open Sans","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+a {
+  transition: 0.15s;
+  text-decoration: none;
+  color: $color-primary;
+
+  &:hover,
+  &:active {
+    color: $black;
+  }
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: 'Fira mono', monospace, monospace;
+}

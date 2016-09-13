@@ -1,0 +1,123 @@
+@include component('item') {
+  margin-bottom: $vertical-rhythm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  :not(pre) > code {
+    color: $color-primary;
+    font-weight: normal;
+    font: 1em/1.35 'Fira mono', monospace, monospace;
+    white-space: nowrap;
+  }
+
+  @include element('heading') {
+    color: $color-primary;
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 $vertical-rhythm;
+  }
+
+  @include element('code-wrapper') {
+    margin-bottom: $vertical-rhythm;
+
+    pre {
+      cursor: text;
+      white-space: normal;
+    }
+
+    code {
+      @include card(1);
+      padding: 1em;
+      white-space: pre;
+    }
+  }
+
+  @include element('sub-heading') {
+    color: $black;
+    margin: 0 0 $vertical-rhythm;
+    font-size: 1.2rem;
+  }
+
+  @include element('description') {
+    margin-bottom: $vertical-rhythm;
+
+    p {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  @include element('table') {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    text-align: left;
+    width: 100%;
+
+    thead th {
+      border-bottom: 2px solid $silver;
+      border-top: none;
+      color: #707070;
+      text-transform: capitalize;
+      vertical-align: bottom;
+    }
+
+    td, th {
+      padding: 0.5em 0.5em 0.5em 0;
+      vertical-align: top;
+    }
+
+    p {
+      margin: 0 0 ($vertical-rhythm / 3);
+    }
+
+    @include desde('md') {
+      tbody {
+        tr:first-of-type > td {
+          border-top: none;
+        }
+
+        td,
+        th {
+          border-top: 1px solid $silver;
+        }
+      }
+    };
+
+    @include hasta('md') {
+      &,
+      tbody,
+      tr,
+      td,
+      th {
+        display: block;
+      }
+
+      thead {
+        @include screen-reader();
+      }
+
+      tr {
+        border-bottom: 2px solid $silver;
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+      }
+
+      td, th {
+        &::before {
+          content: attr(data-label) ': ';
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+      }
+
+      p {
+        display: inline;
+      }
+    }
+  }
+}

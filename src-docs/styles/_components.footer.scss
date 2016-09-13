@@ -1,0 +1,14 @@
+@include component('footer') {
+  background: $light-grey;
+  padding: 1em 0;
+  text-align: center;
+
+  a {
+    display: block;
+  }
+
+  @include desde('md') {
+    display: flex;
+    justify-content: space-between;
+  };
+}

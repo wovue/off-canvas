@@ -1,0 +1,64 @@
+@include component('main') {
+  background: #f9f9f9;
+
+  @include desde('md') {
+    min-height: 45em;
+    padding-left: $sidebar-width;
+  };
+
+  @include element('section') {
+    border-top: 5px solid rgba($color-tertiary, .2);
+    margin-bottom: $vertical-rhythm * 3;
+  }
+
+  @include element('heading') {
+    background: rgba($color-tertiary, .1);
+    border-bottom: 5px solid rgba($color-tertiary, .2);
+    color: $color-tertiary;
+    font-size: 3.5rem;
+    margin: 0 0 1em;
+    padding-bottom: 0.5em;
+    padding-top: 1em;
+    text-align: center;
+    text-transform: capitalize;
+
+    @include desde('md') {
+      padding-bottom: 0.5em;
+      padding-top: 2em;
+    };
+  }
+
+  @include element('sub-section') {
+    margin-bottom: $vertical-rhythm * 3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include element('sub-heading') {
+    color: $color-primary;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0 0 $vertical-rhythm;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &::before {
+      background-color: $color-primary;
+      bottom: 0.15em;
+      content: '';
+      height: 0.2em;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+
+    @include hasta('md') {
+      padding-bottom: 1em;
+    };
+  }
+}

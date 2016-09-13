@@ -1,0 +1,66 @@
+@include component('sidebar') {
+  $level-1: 1.5em;
+  $level-2: $level-1 + 1em;
+  $level-3: $level-2 + 2em;
+
+  @include desde('md') {
+    border-right: 1px solid $light-grey;
+    bottom: 0;
+    box-shadow: 1px 0 1.5px rgba($black, 0.12);
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    transition: .2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    width: $sidebar-width;
+    z-index: 1;
+  };
+
+  @include element('header') {
+    font-size: 1em;
+    margin: 0;
+    padding: 1.45em;
+    text-transform: uppercase;
+  }
+
+  @include element('body') {
+    margin-bottom: $vertical-rhythm;
+  }
+
+  @include element('item') {
+    font-size: 0.9em;
+
+    a {
+      padding: 0.5em $level-3;
+      display: block;
+      text-decoration: none;
+      color: $black;
+
+      &:hover,
+      &:active,
+      &.is-active {
+        background: $light-grey;
+      }
+    }
+
+    @include modifier('heading', 'sub-heading') {
+      a {
+        display: block;
+      }
+    }
+
+    @include modifier('heading') {
+      a {
+        padding: 1em $level-1;
+        font-weight: bold;
+      }
+    }
+
+    @include modifier('sub-heading') {
+      a {
+        padding: 0.5em $level-2;
+        color: #888;
+      }
+    }
+  }
+}
