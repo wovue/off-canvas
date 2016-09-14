@@ -78,6 +78,13 @@ module.exports = {
     formatter: require('eslint-friendly-formatter')
   },
   vue: {
-    loaders: utils.cssLoaders()
+    loaders: utils.cssLoaders(),
+    autoprefixer: false
+  },
+  postcss: function () {
+    return [
+      require('autoprefixer')({ browsers: ['last 2 versions'] }),
+      require('postcss-short-position')()
+    ]
   }
 }
