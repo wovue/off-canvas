@@ -77,6 +77,12 @@
                 required: 'false',
                 default: '`false`',
                 description: 'OffCanvasWrap to push on open OffCanvas.'
+              }, {
+                name: 'overlayBackground',
+                type: 'String',
+                required: 'false',
+                default: '`"rgba(0, 0, 0, .5)"`',
+                description: 'Overlay background color.'
               }
             ],
             events: [

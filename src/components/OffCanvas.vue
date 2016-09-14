@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="c-off-canvas-overlay" transition="off-canvas-overlay" @click.stop="close" v-if="isOpen"></div>
+    <div class="c-off-canvas-overlay" :style="{backgroundColor: overlayBackground}" transition="off-canvas-overlay" @click.stop="close" v-if="isOpen"></div>
     <div class="c-off-canvas" :transition="transitionClass" @transitionend="onTransitionEnd" v-show="isOpen" :style="{maxWidth: offCanvasMaxWidth}">
       <div class="c-off-canvas__content" :class="[class]">
         <slot></slot>
@@ -15,6 +15,10 @@
   export default {
     props: [
       {
+        name: 'overlayBackground',
+        type: String,
+        default: 'rgba(0, 0, 0, .5)'
+      }, {
         name: 'class',
         type: String,
         default: false
