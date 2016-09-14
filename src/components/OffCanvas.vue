@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="c-off-canvas-overlay" transition="off-canvas-overlay" @click.stop="close" v-if="isOpen"></div>
-    <div class="c-off-canvas" :transition="transitionClass" v-show="isOpen" :style="{maxWidth: offCanvasMaxWidth}">
+    <div class="c-off-canvas" :transition="transitionClass" @transitionend="onTransitionEnd" v-show="isOpen" :style="{maxWidth: offCanvasMaxWidth}">
       <div class="c-off-canvas__content" :class="[class]">
         <slot></slot>
       </div>
@@ -75,6 +75,12 @@
           offCanvasAlign: this.align
         }, this.wrapRef)
         this.isOpen = true
+        this.$emit('opened')
+      },
+      onTransitionEnd () {
+        if (!this.isOpen) {
+          this.$emit('closed')
+        }
       }
     }
   }
