@@ -1,0 +1,9 @@
+@include component('off-canvas-wrap') {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+
+  @include element('content') {
+    transition: $transition-time transform;
+  }
+}

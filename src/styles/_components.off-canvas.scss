@@ -1,0 +1,12 @@
+@include component('off-canvas') {
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  position: fixed 0 auto 0;
+  width: 100%;
+  z-index: 1000;
+
+  @include element('content') {
+    display: block;
+    width: 100%;
+  }
+}

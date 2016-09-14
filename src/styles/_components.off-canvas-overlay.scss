@@ -1,0 +1,5 @@
+@include component('off-canvas-overlay') {
+  background-color: rgba($black, .5);
+  position: fixed 0;
+  z-index: 999;
+}
