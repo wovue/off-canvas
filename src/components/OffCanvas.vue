@@ -34,10 +34,6 @@
         name: 'wrapRef',
         type: String,
         default: false
-      }, {
-        name: 'modifier',
-        type: [ String, Boolean ],
-        default: false
       }
     ],
     data () {
