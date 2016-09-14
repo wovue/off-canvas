@@ -13,6 +13,9 @@
       </div>
       <h5 class="c-item__sub-heading">Props</h5>
       <app-table class="c-item__table" :data="tables.offCanvasWrap.props"></app-table>
+      <h4 class="c-item__heading">Directives</h4>
+      <h5 class="c-item__sub-heading">v-off-canvas</h5>
+      <app-table class="c-item__table" :data="tables.offCanvas.directive"></app-table>
     </div>
   </section>
 </template>
@@ -35,6 +38,14 @@
             ]
           },
           offCanvas: {
+            directive: [
+              {
+                expression: 'OffCanvas identifier.',
+                expects: 'String',
+                argument: 'toggle',
+                description: 'Toggle the OffCanvas on click.'
+              }
+            ],
             props: [
               {
                 name: 'ref',
