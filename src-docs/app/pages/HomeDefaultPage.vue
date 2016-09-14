@@ -12,6 +12,9 @@
       </div>
       <div class="c-item__code-wrapper" v-html="snippets.installationInclude"></div>
       <h5 class="c-item__sub-heading">CommonJS (Webpack/Browserify)</h5>
+      <div class="c-item__description">
+        <p>If you are working with <code>Browserify</code>, you will have to add the css separately.</p>
+      </div>
       <div class="c-item__code-wrapper" v-html="snippets.installationCommonjs"></div>
     </div>
   </section>

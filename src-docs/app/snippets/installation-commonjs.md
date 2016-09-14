@@ -1,6 +1,5 @@
 ```js
-// app.js
-
+// with webpack you can import css
 require('off-canvas/dist/off-canvas.css')
 
 import Vue from 'vue'

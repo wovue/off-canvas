@@ -1,3 +1,3 @@
 ```sh
-$ npm install off-canvas --save
+$ npm install wovue-off-canvas --save
 ```
