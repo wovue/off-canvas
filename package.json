@@ -26,10 +26,12 @@
   },
   "homepage": "https://wovue.github.io/off-canvas",
   "dependencies": {
-    "dom-events": "^0.1.1"
+    "dom-events": "^0.1.1",
+    "sass-bem-constructor": "^1.1.0",
+    "wocss-settings-colors": "^1.0.1"
   },
   "peerDependencies": {
-    "vue": "1.x"
+    "vue": "^1.0.21"
   },
   "devDependencies": {
     "postcss-loader": "^0.13.0",
@@ -69,7 +71,6 @@
     "postcss-short-position": "^1.0.0",
     "raw-loader": "^0.5.1",
     "sanitize.css": "^4.1.0",
-    "sass-bem-constructor": "^1.1.0",
     "sass-loader": "^4.0.0",
     "shelljs": "^0.6.0",
     "url-loader": "^0.5.7",
@@ -85,7 +86,6 @@
     "webpack-merge": "^0.8.3",
     "wocss-objects-reset-list": "^1.0.0",
     "wocss-objects-screen-reader": "^1.0.1",
-    "wocss-settings-colors": "^1.0.1",
     "wocss-tools-bem-constructor": "^1.0.2",
     "wocss-tools-breakpoints": "^1.0.2"
   }
