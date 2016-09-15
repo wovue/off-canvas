@@ -15,7 +15,7 @@
           @opened="onOpen"
         >
           <h1>Navigation</h1>
-          <a v-off-canvas:toggle="nav" href="/#!/examples/real-world">Link to someplace</a>
+          <a v-off-canvas:toggle="nav" href="https://wovue.github.io/off-canvas/#!/examples/real-world">Link to someplace</a>
         </wv-off-canvas>
         <button v-off-canvas:toggle="nav" type="button">Open Nav</button>
       </div>
