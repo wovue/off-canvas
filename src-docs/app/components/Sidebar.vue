@@ -30,16 +30,16 @@
               <a v-link="{name: 'ExamplesDefaultPage', exact: true}">Default</a>
             </li>
             <li class="c-sidebar__item c-sidebar__item--sub-heading">
-              <a v-link="{name: 'ExamplesPrimaryPage'}">Primary</a>
+              <a v-link="{name: 'ExamplesRealWorldPage'}">Real world</a>
             </li>
           </ul>
         </li>
-        <li class="c-sidebar__item c-sidebar__item--heading">
+        <!-- <li class="c-sidebar__item c-sidebar__item--heading">
           <a v-link="{name: 'DocsExample'}">Page boilerplate</a>
         </li>
         <li class="c-sidebar__item c-sidebar__item--heading">
           <a v-link="{name: 'DocsMarkdownExample'}">Markdown page boilerplate</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </header>

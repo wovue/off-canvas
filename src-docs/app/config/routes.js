@@ -4,7 +4,7 @@ import HomeUsagePage from 'src-docs/app/pages/HomeUsagePage'
 import HomeApiPage from 'src-docs/app/pages/HomeApiPage'
 import ExamplesPage from 'src-docs/app/pages/ExamplesPage'
 import ExamplesDefaultPage from 'src-docs/app/pages/ExamplesDefaultPage'
-import ExamplesPrimaryPage from 'src-docs/app/pages/ExamplesPrimaryPage'
+import ExamplesRealWorldPage from 'src-docs/app/pages/ExamplesRealWorldPage'
 import DocsExamplePage from 'src-docs/app/pages/DocsExamplePage'
 import DocsMarkdownExamplePage from 'src-docs/app/pages/DocsMarkdownExamplePage'
 
@@ -35,9 +35,9 @@ export const routes = {
         name: 'ExamplesDefaultPage',
         component: ExamplesDefaultPage
       },
-      '/primary': {
-        name: 'ExamplesPrimaryPage',
-        component: ExamplesPrimaryPage
+      '/real-world': {
+        name: 'ExamplesRealWorldPage',
+        component: ExamplesRealWorldPage
       }
     }
   },
