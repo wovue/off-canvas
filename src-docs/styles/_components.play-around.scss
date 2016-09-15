@@ -1,0 +1,13 @@
+@include component('play-around') {
+  padding: 1em;
+  border: 2px solid $color-primary;
+  margin-bottom: $vertical-rhythm;
+
+  button {
+    border-style: outset;
+
+    &:active {
+      border-style: inset;
+    }
+  }
+}
