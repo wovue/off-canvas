@@ -1,6 +1,6 @@
 <template>
   <section class="c-main__sub-section">
-    <h3 class="c-main__sub-heading u-gutter">Primary</h3>
+    <h3 class="c-main__sub-heading u-gutter">Real world example</h3>
     <div class="c-item u-gutter">
       <h5 class="c-item__sub-heading">Code:</h5>
       <div class="c-item__code-wrapper" v-html="snippets.rw01"></div>
