@@ -4,7 +4,9 @@
 
 Create a smooth off-canvas sidebar that slides in and out of the page.
 
-## [Live examples & Docs](https://wovue.github.io/off-canvas)
+## Live examples & Docs
+
+[https://wovue.github.io/off-canvas](https://wovue.github.io/off-canvas)
 
 ## Features
 
