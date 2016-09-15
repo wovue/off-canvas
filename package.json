@@ -1,7 +1,7 @@
 {
   "name": "wovue-off-canvas",
   "version": "1.0.0",
-  "description": "OffCanvas vue component",
+  "description": "OffCanvas (Sidenav/Drawer) component for Vue.js",
   "main": "dist/off-canvas.js",
   "scripts": {
     "dev": "node build/dev-server.js",

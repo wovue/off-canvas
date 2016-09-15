@@ -1,8 +1,50 @@
 # OffCanvas
 
-> OffCanvas vue component
+> OffCanvas (Sidenav/Drawer) component for Vue.js
 
-## Build Setup
+Create a smooth off-canvas sidebar that slides in and out of the page.
+
+## [Live examples & Docs](https://wovue.github.io/off-canvas)
+
+## Features
+
+* Support multiples OffCanvas.
+* You can optionallity push your content when the OffCanvas is open.
+
+## Getting Started
+
+Install the package using npm
+
+```sh
+$ npm install wovue-off-canvas --save
+```
+
+Install the plugin
+
+```js
+require('wovue-off-canvas/dist/off-canvas.css')
+
+import Vue from 'vue'
+import OffCanvas from 'wovue-off-canvas'
+
+Vue.use(OffCanvas)
+```
+
+**Note** only with `webpack` you can import `CSS` in javascript.
+
+## Basic Usage
+
+```html
+<wv-off-canvas ref="menu">
+  <!-- off-canvas content -->
+</wv-off-canvas>
+<wv-off-cannvas-wrap>
+  <!-- content to push -->
+  <button v-off-canvas:toggle="menu" type="button">Toggle menu</button>
+</wv-off-cannvas-wrap>
+```
+
+## Development
 
 ``` bash
 # install dependencies
@@ -16,15 +58,4 @@ npm run build
 
 # copy docs folder to gh-pages branch and push
 npm run deploy-docs
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For detailed explanation on how things work, checkout the [webpack template guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
