@@ -43,7 +43,8 @@
                 expression: 'OffCanvas identifier.',
                 expects: 'String',
                 argument: 'toggle',
-                description: 'Toggle the OffCanvas on click.'
+                description: 'Toggle the OffCanvas on click.',
+                example: '`<a v-off-canvas:toggle="menu">Link</a>`'
               }
             ],
             props: [
