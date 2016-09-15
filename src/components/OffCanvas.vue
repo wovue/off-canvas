@@ -11,6 +11,7 @@
 
 <script>
   import {eventBus} from '../helpers'
+  import eve from 'dom-events'
 
   export default {
     props: [
@@ -55,11 +56,20 @@
     },
     ready () {
       eventBus.on('toggle:off-canvas', this.onToggle)
+      eve.on(document, 'keydown', this.onKeyDown)
     },
     beforeDestroy () {
       eventBus.removeListener('toggle:off-canvas', this.onToggle)
+      eve.off(document, 'keydown', this.onKeyDown)
     },
     methods: {
+      onKeyDown (event) {
+        // check if keydown is 'esc'
+        if (this.isOpen && event.which === 27) {
+          event.stopPropagation()
+          this.close()
+        }
+      },
       onToggle (offCanvasRef) {
         if (this.ref === offCanvasRef) {
           if (this.isOpen) {
