@@ -2,17 +2,12 @@
 <div>
   <wv-off-canvas-wrap ref="main">
     <!-- content to push -->
+    <button v-off-canvas:toggle="otherMenu">Open menu</button>
+    <wv-off-canvas class="my-offcanvas" wrap-ref="main" ref="otherMenu" align="right">
+      <h1>Ref</h1>
+      <button v-off-canvas:toggle="otherMenu" style="...">Close menu</button>
+    </wv-off-canvas>
   </wv-off-canvas-wrap>
-</div>
-```
-
-```html
-<div>
-  <button v-off-canvas:toggle="otherMenu">Open menu</button>
-  <wv-off-canvas class="my-offcanvas" ref="otherMenu" align="right">
-    <h1>Ref</h1>
-    <button v-off-canvas:toggle="otherMenu" style="background: #ff4136; color: white">Close menu</button>
-  </wv-off-canvas>
 </div>
 ```
 

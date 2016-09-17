@@ -32,7 +32,7 @@
         </wv-off-canvas>
       </div>
       <div class="c-item__description">
-        <p>and that's it!... oohhh wait</p>
+        <p>and that's it!...... oohhh wait</p>
         <p>We will fix it, moving the OffCanvas to the body, using the <a href="https://github.com/rhyzx/vue-transfer-dom" target="_blank" rel="noreferrer nofollow">v-transfer-dom</a> directive</p>
       </div>
       <div class="c-item__code-wrapper" v-html="snippets.usage021"></div>
@@ -44,7 +44,7 @@
         </wv-off-canvas>
       </div>
       <div class="c-item__description">
-        <p>Applying <code>transform</code> rule to an element will create a new stacking context, it affect the rendering of elements with position <code>fixed</code>. So we need to move the OffCanvas to the <code>body</code>, and that's it.</p>
+        <p><strong>Note:</strong> Applying <code>transform</code> rule to an element will create a new stacking context, it affect the rendering of elements with position <code>fixed</code>. So we need to move the OffCanvas to the <code>body</code>, and that's it.</p>
       </div>
     </div>
   </section>
