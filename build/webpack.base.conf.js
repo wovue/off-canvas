@@ -16,7 +16,10 @@ module.exports = {
     modulesDirectories: ['node_modules', 'shared']
   },
   resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
+    fallback: [path.join(__dirname, '../node_modules')],
+    alias: {
+      "markdown-highlight-custom": path.join(__dirname, "./markdown-highlight-custom")
+    }
   },
   module: {
     preLoaders: [
@@ -70,7 +73,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        loader: 'html!markdown-highlight'
+        loader: 'html!markdown-highlight-custom'
       }
     ]
   },
