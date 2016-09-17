@@ -4,6 +4,6 @@
   width: 100%;
 
   @include element('content') {
-    transition: $transition-time transform;
+    transition: $transition-time transform $transition-function;
   }
 }

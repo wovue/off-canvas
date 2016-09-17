@@ -2,7 +2,7 @@
   &-transition {
     left: 0;
     right: auto;
-    transition: $transition-time transform;
+    transition: $transition-time transform $transition-function;
   }
 
   &-enter,
@@ -15,7 +15,7 @@
   &-transition {
     left: auto;
     right: 0;
-    transition: $transition-time transform;
+    transition: $transition-time transform $transition-function;
   }
 
   &-enter,
