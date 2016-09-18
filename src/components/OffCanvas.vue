@@ -27,7 +27,6 @@
 
 <script>
   import {eventBus} from '../helpers'
-  import eve from 'dom-events'
 
   export default {
     props: [
@@ -80,11 +79,11 @@
     },
     ready () {
       eventBus.on('toggle:off-canvas', this.onToggle)
-      eve.on(document, 'keydown', this.onKeyDown)
+      document.addEventListener('keydown', this.onKeyDown)
     },
     beforeDestroy () {
       eventBus.removeListener('toggle:off-canvas', this.onToggle)
-      eve.off(document, 'keydown', this.onKeyDown)
+      document.removeEventListener('keydown', this.onKeyDown)
     },
     methods: {
       onKeyDown (event) {

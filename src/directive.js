@@ -1,5 +1,4 @@
 import {eventBus} from './helpers'
-import eve from 'dom-events'
 
 const directive = {
   bind () {
@@ -21,7 +20,7 @@ const directive = {
 
       eventBus.on('opened:off-canvas', this.$wv.onOpened)
       eventBus.on('closed:off-canvas', this.$wv.onClosed)
-      eve.on(this.el, 'click', this.$wv.toggleOffCanvas)
+      this.el.addEventListener('click', this.$wv.toggleOffCanvas)
       this.el.setAttribute('aria-expanded', false)
       this.el.setAttribute('aria-controls', this.expression)
     }
@@ -30,7 +29,7 @@ const directive = {
     if (this.arg === 'toggle') {
       eventBus.removeListener('opened:off-canvas', this.$wv.onOpened)
       eventBus.removeListener('closed:off-canvas', this.$wv.onClosed)
-      eve.off(this.el, 'click', this.$wv.toggleOffCanvas)
+      this.el.removeEventListener('click', this.$wv.toggleOffCanvas)
     }
   }
 }

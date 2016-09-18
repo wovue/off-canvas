@@ -26,7 +26,6 @@
   },
   "homepage": "https://wovue.github.io/off-canvas",
   "dependencies": {
-    "dom-events": "^0.1.1",
     "sass-bem-constructor": "^1.1.0",
     "wocss-settings-colors": "^1.0.1",
     "vue": "^1.0.21"
