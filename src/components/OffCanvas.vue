@@ -51,6 +51,14 @@
         type: String,
         required: true
       }, {
+        name: 'closeOnEsc',
+        type: Boolean,
+        default: true
+      }, {
+        name: 'closeOnOutsideClick',
+        type: Boolean,
+        default: true
+      }, {
         name: 'wrapRef',
         type: String,
         default: false
@@ -94,7 +102,7 @@
     methods: {
       onKeyDown (event) {
         // check if keydown is 'esc'
-        if (this.isOpen && event.which === 27) {
+        if (this.isOpen && event.which === 27 && this.closeOnEsc) {
           event.stopPropagation()
           this.close()
         }
@@ -108,7 +116,13 @@
           }
         }
       },
-      close () {
+      close (event) {
+        if (event) {
+          if (!this.closeOnOutsideClick) {
+            return
+          }
+        }
+
         eventBus.emit('close:off-canvas-wrap', this.wrapRef)
         this.isOpen = false
       },

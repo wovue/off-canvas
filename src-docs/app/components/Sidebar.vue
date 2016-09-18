@@ -27,7 +27,7 @@
         <li>
           <ul class="o-reset-list">
             <li class="c-sidebar__item c-sidebar__item--sub-heading">
-              <a v-link="{name: 'ExamplesDefaultPage', exact: true}">Default</a>
+              <a v-link="{name: 'ExamplesDefaultPage', exact: true}">Various</a>
             </li>
             <li class="c-sidebar__item c-sidebar__item--sub-heading">
               <a v-link="{name: 'ExamplesRealWorldPage'}">Real world</a>

@@ -50,40 +50,52 @@
             props: [
               {
                 name: 'ref',
-                type: 'String',
+                type: '`String`',
                 required: 'true',
                 default: null,
                 description: 'OffCanvas identifier.'
               }, {
                 name: 'class',
-                type: 'String',
+                type: '`String`',
                 required: 'false',
                 default: '`false`',
                 description: 'OffCanvas `class` attribute.'
               }, {
                 name: 'align',
-                type: 'String',
+                type: '`String`',
                 required: 'false',
                 default: '`"left"`',
                 description: 'OffCanvas align. It can be `"left"` or `"right"`.'
               }, {
                 name: 'width',
-                type: 'Number',
+                type: '`Number`',
                 required: 'false',
                 default: '`300`',
                 description: 'OffCanvas `max-width` style rule. (e.g. `300`, `70%`)'
               }, {
                 name: 'wrapRef',
-                type: 'String',
+                type: '`String`',
                 required: 'false',
                 default: '`false`',
                 description: 'OffCanvasWrap to push on open OffCanvas.'
               }, {
                 name: 'overlayBackground',
-                type: 'String',
+                type: '`String`',
                 required: 'false',
                 default: '`"rgba(0, 0, 0, .5)"`',
                 description: 'Overlay background color.'
+              }, {
+                name: 'closeOnEsc `new`',
+                type: '`Boolean`',
+                required: 'false',
+                default: '`true`',
+                description: 'This determines if pressing the `esc` key will close the OffCanvas.'
+              }, {
+                name: 'closeOnOutsideClick `new`',
+                type: '`Boolean`',
+                required: 'false',
+                default: '`true`',
+                description: 'This determines if clicking on the overlay will close the OffCanvas.'
               }
             ],
             events: [
