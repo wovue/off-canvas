@@ -71,7 +71,7 @@
                 type: 'Number',
                 required: 'false',
                 default: '`300`',
-                description: 'OffCanvas `max-width` style rule.'
+                description: 'OffCanvas `max-width` style rule. (e.g. `300`, `70%`)'
               }, {
                 name: 'wrapRef',
                 type: 'String',
@@ -90,11 +90,11 @@
               {
                 name: 'opened',
                 type: 'emitted',
-                description: 'Fired when the OffCanvas is opened. The transition starts.'
+                description: 'Fired when the OffCanvas is opened. The animation starts.'
               }, {
                 name: 'closed',
                 type: 'emitted',
-                description: 'Fired when the OffCanvas is closed. The transition ends.'
+                description: 'Fired when the OffCanvas is closed. The animation ends.'
               }
             ]
           }

@@ -44,7 +44,7 @@
         default: 'left'
       }, {
         name: 'width',
-        type: Number,
+        type: [Number, String],
         default: 300
       }, {
         name: 'ref',
@@ -74,7 +74,13 @@
         return `wv-off-canvas-${this.align}`
       },
       offCanvasMaxWidth () {
-        return `${this.width}px`
+        if (typeof this.width === 'number') {
+          return `${this.width}px`
+        }
+
+        if (typeof this.width === 'string') {
+          return this.width
+        }
       }
     },
     ready () {
@@ -109,7 +115,7 @@
       open () {
         eventBus.emit('opened:off-canvas', this.ref)
         eventBus.emit('open:off-canvas-wrap', {
-          offCanvasWidth: this.width,
+          offCanvasWidth: this.offCanvasMaxWidth,
           offCanvasAlign: this.align
         }, this.wrapRef)
         this.isOpen = true

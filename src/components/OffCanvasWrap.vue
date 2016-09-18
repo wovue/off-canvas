@@ -29,9 +29,9 @@
       contentTransform () {
         if (this.isOpen) {
           if (this.offCanvasAlign === 'right') {
-            return `translate3d(-${this.offCanvasWidth}px, 0, 0)`
+            return `translate3d(-${this.offCanvasWidth}, 0, 0)`
           }
-          return `translate3d(${this.offCanvasWidth}px, 0, 0)`
+          return `translate3d(${this.offCanvasWidth}, 0, 0)`
         }
         return ''
       }

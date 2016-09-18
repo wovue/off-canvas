@@ -10,6 +10,7 @@
           overlay-background="transparent"
           class="nav"
           v-transfer-dom
+          width="20rem"
           wrap-ref="main"
           ref="nav"
           @closed="onClose"
