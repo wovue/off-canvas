@@ -10,6 +10,7 @@ Create a smooth off-canvas sidebar that slides in and out of the page.
 
 ## Features
 
+* a11y friendly.
 * Support multiples OffCanvas.
 * You can optionallity push your content when the OffCanvas is open.
 

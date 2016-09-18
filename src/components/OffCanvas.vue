@@ -1,7 +1,23 @@
 <template>
-  <div>
-    <div class="c-off-canvas-overlay" :style="{backgroundColor: overlayBackground}" transition="off-canvas-overlay" @click.stop="close" v-if="isOpen"></div>
-    <div class="c-off-canvas" :transition="transitionClass" @transitionend="onTransitionEnd" v-show="isOpen" :style="{maxWidth: offCanvasMaxWidth}">
+  <div :aria-hidden="`${!isOpen}`">
+    <div
+      class="c-off-canvas-overlay"
+      :style="{backgroundColor: overlayBackground}"
+      @click.stop="close"
+      v-if="isOpen"
+      transition="off-canvas-overlay"
+      tabindex="-1"
+    ></div>
+    <div
+      class="c-off-canvas"
+      :style="{maxWidth: offCanvasMaxWidth}"
+      v-show="isOpen"
+      @transitionend="onTransitionEnd"
+      :transition="transitionClass"
+      :aria-labelledby="ariaLabelledby"
+      :role="role"
+      :id="ref"
+    >
       <div class="c-off-canvas__content" :class="[class]">
         <slot></slot>
       </div>
@@ -37,6 +53,14 @@
         required: true
       }, {
         name: 'wrapRef',
+        type: String,
+        default: false
+      }, {
+        name: 'role',
+        type: String,
+        default: false
+      }, {
+        name: 'ariaLabelledby',
         type: String,
         default: false
       }
@@ -84,6 +108,7 @@
         this.isOpen = false
       },
       open () {
+        eventBus.emit('opened:off-canvas', this.ref)
         eventBus.emit('open:off-canvas-wrap', {
           offCanvasWidth: this.width,
           offCanvasAlign: this.align
@@ -93,6 +118,7 @@
       },
       onTransitionEnd () {
         if (!this.isOpen) {
+          eventBus.emit('closed:off-canvas', this.ref)
           this.$emit('closed')
         }
       }
