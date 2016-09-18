@@ -12,6 +12,7 @@
           v-transfer-dom
           wrap-ref="main"
           ref="nav"
+          @closed="onClose"
           @opened="onOpen"
         >
           <h1>Navigation</h1>
@@ -36,6 +37,9 @@
       }
     },
     methods: {
+      onClose () {
+        window.alert('OffCanvas closed')
+      },
       onOpen () {
         window.alert('OffCanvas opened')
       }
