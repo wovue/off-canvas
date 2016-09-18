@@ -27,7 +27,6 @@
   "homepage": "https://wovue.github.io/off-canvas",
   "dependencies": {
     "sass-bem-constructor": "^1.1.0",
-    "wocss-settings-colors": "^1.0.1",
     "vue": "^1.0.21"
   },
   "peerDependencies": {
@@ -86,6 +85,7 @@
     "webpack-merge": "^0.8.3",
     "wocss-objects-reset-list": "^1.0.0",
     "wocss-objects-screen-reader": "^1.0.1",
+    "wocss-settings-colors": "^1.0.1",
     "wocss-tools-bem-constructor": "^1.0.2",
     "wocss-tools-breakpoints": "^1.0.2"
   }
