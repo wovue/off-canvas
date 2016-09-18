@@ -50,4 +50,5 @@ function onClosed (offCanvasRef) {
   }
 }
 
-export default directive
+export {directive}
+export {toggleOffCanvas}
