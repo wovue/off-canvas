@@ -5,6 +5,7 @@
 
   @include element('content') {
     -webkit-overflow-scrolling: touch;
+    background-color: #ffffff;
     display: block;
     height: 100%;
     overflow: auto;
