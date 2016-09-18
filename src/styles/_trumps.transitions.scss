@@ -1,34 +1,35 @@
-.off-canvas-left {
+.wv-off-canvas-left {
   &-transition {
     left: 0;
     right: auto;
-    transition: $transition-time transform $transition-function;
   }
 
-  &-enter,
+  &-enter {
+    animation: wv-off-canvas-left-enter $transition-time $transition-function;
+  }
+
   &-leave {
-    transform: translate3d(-100%, 0, 0);
+    animation: wv-off-canvas-left-leave $transition-time $transition-function;
   }
 }
 
-.off-canvas-right {
+.wv-off-canvas-right {
   &-transition {
     left: auto;
     right: 0;
-    transition: $transition-time transform $transition-function;
   }
 
-  &-enter,
+  &-enter {
+    animation: wv-off-canvas-right-enter $transition-time $transition-function;
+  }
+
   &-leave {
-    transform: translate3d(100%, 0, 0);
+    animation: wv-off-canvas-right-leave $transition-time $transition-function;
   }
 }
 
 
-
-
-
-.off-canvas-overlay {
+.wv-off-canvas-overlay {
   &-transition {
     transition: $transition-time opacity
   }
@@ -36,5 +37,33 @@
   &-enter,
   &-leave {
     opacity: 0;
+  }
+}
+
+
+
+
+
+@keyframes wv-off-canvas-left-enter {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes wv-off-canvas-left-leave {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes wv-off-canvas-right-enter {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes wv-off-canvas-right-leave {
+  to {
+    transform: translate3d(100%, 0, 0);
   }
 }

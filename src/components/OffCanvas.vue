@@ -5,14 +5,14 @@
       :style="{backgroundColor: overlayBackground}"
       @click.stop="close"
       v-if="isOpen"
-      transition="off-canvas-overlay"
+      transition="wv-off-canvas-overlay"
       tabindex="-1"
     ></div>
     <div
       class="c-off-canvas"
       :style="{maxWidth: offCanvasMaxWidth}"
       v-show="isOpen"
-      @transitionend="onTransitionEnd"
+      @animationend="onAnimationEnd"
       :transition="transitionClass"
       :aria-labelledby="ariaLabelledby"
       :role="role"
@@ -71,7 +71,7 @@
     },
     computed: {
       transitionClass () {
-        return `off-canvas-${this.align}`
+        return `wv-off-canvas-${this.align}`
       },
       offCanvasMaxWidth () {
         return `${this.width}px`
@@ -115,7 +115,7 @@
         this.isOpen = true
         this.$emit('opened')
       },
-      onTransitionEnd () {
+      onAnimationEnd () {
         if (!this.isOpen) {
           eventBus.emit('closed:off-canvas', this.ref)
           this.$emit('closed')
