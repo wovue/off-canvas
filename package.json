@@ -26,8 +26,7 @@
   },
   "homepage": "https://wovue.github.io/off-canvas",
   "dependencies": {
-    "sass-bem-constructor": "^1.1.0",
-    "vue": "^1.0.21"
+    "sass-bem-constructor": "^1.1.0"
   },
   "peerDependencies": {
     "vue": "^1.0.21"
@@ -79,6 +78,7 @@
     "vue-router": "^0.7.13",
     "vue-style-loader": "^1.0.0",
     "vue-transfer-dom": "^1.1.0",
+    "vue": "^1.0.21",
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
