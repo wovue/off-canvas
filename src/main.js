@@ -4,6 +4,10 @@ import OffCanvas from './components/OffCanvas'
 import OffCanvasWrap from './components/OffCanvasWrap'
 import {directive, toggleOffCanvas} from './directive'
 
+let components = {
+  OffCanvas,
+  OffCanvasWrap
+}
 let Vue = {}
 
 const offCanvasPlugin = {
@@ -30,3 +34,4 @@ if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.directive('off-canvas', directive)
 }
 export default offCanvasPlugin
+export {components, toggleOffCanvas, directive}
