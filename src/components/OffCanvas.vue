@@ -101,7 +101,7 @@
     },
     methods: {
       onKeyDown (event) {
-        // check if keydown is 'esc'
+        // check if the key is 'escape'
         if (this.isOpen && event.which === 27 && this.closeOnEsc) {
           event.stopPropagation()
           this.close()
@@ -127,6 +127,7 @@
           wrapRef: this.wrapRef,
           toOpen: false
         })
+
         this.isOpen = false
       },
       open () {
@@ -144,6 +145,7 @@
           },
           toOpen: true
         })
+
         this.isOpen = true
         this.$emit('opened')
       },
