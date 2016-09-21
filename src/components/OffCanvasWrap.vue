@@ -37,22 +37,19 @@
       }
     },
     ready () {
-      eventBus.on('open:off-canvas-wrap', this.onOpen)
-      eventBus.on('close:off-canvas-wrap', this.onClose)
+      eventBus.on('toggle:off-canvas-wrap', this.onToggle)
     },
     beforeDestroy () {
-      eventBus.removeListener('open:off-canvas-wrap', this.onOpen)
-      eventBus.removeListener('close:off-canvas-wrap', this.onClose)
+      eventBus.removeListener('toggle:off-canvas-wrap', this.onToggle)
     },
     methods: {
-      onOpen (offCanvasData, wrapRef) {
+      onToggle ({wrapRef, offCanvasData, toOpen}) {
         if (this.ref === wrapRef) {
-          this.open(offCanvasData)
-        }
-      },
-      onClose (wrapRef) {
-        if (this.ref === wrapRef) {
-          this.close()
+          if (toOpen) {
+            this.open(offCanvasData)
+          } else {
+            this.close()
+          }
         }
       },
       close () {

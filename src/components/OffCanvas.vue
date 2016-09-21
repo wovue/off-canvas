@@ -123,15 +123,22 @@
           }
         }
 
-        eventBus.emit('close:off-canvas-wrap', this.wrapRef)
+        eventBus.emit('toggle:off-canvas-wrap', {
+          wrapRef: this.wrapRef,
+          toOpen: false
+        })
         this.isOpen = false
       },
       open () {
         eventBus.emit('opened:off-canvas', this.ref)
-        eventBus.emit('open:off-canvas-wrap', {
-          offCanvasWidth: this.offCanvasMaxWidth,
-          offCanvasAlign: this.align
-        }, this.wrapRef)
+        eventBus.emit('toggle:off-canvas-wrap', {
+          wrapRef: this.wrapRef,
+          offCanvasData: {
+            offCanvasWidth: this.offCanvasMaxWidth,
+            offCanvasAlign: this.align
+          },
+          toOpen: true
+        })
         this.isOpen = true
         this.$emit('opened')
       },
