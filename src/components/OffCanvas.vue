@@ -130,7 +130,12 @@
         this.isOpen = false
       },
       open () {
-        eventBus.emit('opened:off-canvas', this.ref)
+        // toggle aria-expanded
+        eventBus.emit('toggle:directive', {
+          ref: this.ref,
+          opened: true
+        })
+
         eventBus.emit('toggle:off-canvas-wrap', {
           wrapRef: this.wrapRef,
           offCanvasData: {
@@ -144,7 +149,12 @@
       },
       onAnimationEnd () {
         if (!this.isOpen) {
-          eventBus.emit('closed:off-canvas', this.ref)
+          // toggle aria-expanded
+          eventBus.emit('toggle:directive', {
+            ref: this.ref,
+            opened: false
+          })
+
           this.$emit('closed')
         }
       }

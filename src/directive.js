@@ -14,21 +14,19 @@ const directive = {
       // bindings
       // http://stackoverflow.com/questions/14417890/does-bind-change-the-function-reference-how-to-set-permanently?lq=1
       this.$wv = {}
-      this.$wv.onOpened = onOpened.bind(this)
-      this.$wv.onClosed = onClosed.bind(this)
+      this.$wv.onToggle = onToggle.bind(this)
       this.$wv.toggleOffCanvas = toggleOffCanvas.bind(undefined, this.expression)
 
-      eventBus.on('opened:off-canvas', this.$wv.onOpened)
-      eventBus.on('closed:off-canvas', this.$wv.onClosed)
+      eventBus.on('toggle:directive', this.$wv.onToggle)
       this.el.addEventListener('click', this.$wv.toggleOffCanvas)
+
       this.el.setAttribute('aria-expanded', false)
       this.el.setAttribute('aria-controls', this.expression)
     }
   },
   unbind () {
     if (this.arg === 'toggle') {
-      eventBus.removeListener('opened:off-canvas', this.$wv.onOpened)
-      eventBus.removeListener('closed:off-canvas', this.$wv.onClosed)
+      eventBus.removeListener('toggle:directive', this.$wv.onToggle)
       this.el.removeEventListener('click', this.$wv.toggleOffCanvas)
     }
   }
@@ -38,17 +36,10 @@ function toggleOffCanvas (offCanvasRef) {
   eventBus.emit('toggle:off-canvas', offCanvasRef)
 }
 
-function onOpened (offCanvasRef) {
-  if (this.expression === offCanvasRef) {
-    this.el.setAttribute('aria-expanded', true)
+function onToggle (offCanvas) {
+  if (this.expression === offCanvas.ref) {
+    this.el.setAttribute('aria-expanded', offCanvas.opened)
   }
 }
 
-function onClosed (offCanvasRef) {
-  if (this.expression === offCanvasRef) {
-    this.el.setAttribute('aria-expanded', false)
-  }
-}
-
-export {directive}
-export {toggleOffCanvas}
+export {directive, toggleOffCanvas}
