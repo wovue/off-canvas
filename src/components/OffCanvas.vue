@@ -1,5 +1,5 @@
 <template>
-  <div :aria-hidden="`${!isOpen}`">
+  <div :aria-hidden="`${ariaHidden}`">
     <div
       class="c-off-canvas-overlay"
       :style="{backgroundColor: overlayBackground}"
@@ -74,7 +74,8 @@
     ],
     data () {
       return {
-        isOpen: false
+        isOpen: false,
+        ariaHidden: true
       }
     },
     computed: {
@@ -147,6 +148,7 @@
         })
 
         this.isOpen = true
+        this.ariaHidden = false
         this.$emit('opened')
       },
       onAnimationEnd () {
@@ -157,6 +159,7 @@
             opened: false
           })
 
+          this.ariaHidden = true
           this.$emit('closed')
         }
       }
