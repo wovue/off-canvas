@@ -1,3 +1,4 @@
 import {EventEmitter} from 'events'
+import objectAssign from 'object-assign'
 
-export const eventBus = Object.assign({}, EventEmitter.prototype)
+export const eventBus = objectAssign({}, EventEmitter.prototype)
