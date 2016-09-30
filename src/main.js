@@ -2,7 +2,7 @@ require('./styles/main.scss')
 
 import OffCanvas from './components/OffCanvas'
 import OffCanvasWrap from './components/OffCanvasWrap'
-import {directive, toggleOffCanvas} from './directive'
+import {directive, toggleOffCanvas, closeOffCanvas, openOffCanvas} from './directive'
 
 let components = {
   OffCanvas,
@@ -19,7 +19,9 @@ const offCanvasPlugin = {
       Vue.prototype.$wv = {}
     }
     Vue.prototype.$wv.offCanvas = {
-      toggle: toggleOffCanvas
+      toggle: toggleOffCanvas,
+      close: closeOffCanvas,
+      open: openOffCanvas
     }
 
     Vue.component('wv-off-canvas', OffCanvas)
@@ -34,4 +36,4 @@ if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.directive('off-canvas', directive)
 }
 export default offCanvasPlugin
-export {components, toggleOffCanvas, directive}
+export {components, toggleOffCanvas, closeOffCanvas, openOffCanvas, directive}

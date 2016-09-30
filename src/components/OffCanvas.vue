@@ -102,19 +102,33 @@
     },
     methods: {
       onKeyDown (event) {
-        // check if the key is 'escape'
+        // check if keydown is 'esc'
         if (this.isOpen && event.which === 27 && this.closeOnEsc) {
           event.stopPropagation()
           this.close()
         }
       },
-      onToggle (offCanvasRef) {
-        if (this.ref === offCanvasRef) {
-          if (this.isOpen) {
-            this.close()
-          } else {
-            this.open()
+      onToggle (offCanvasRef, actionType) {
+        if (this.ref !== offCanvasRef) return
+
+        switch (actionType) {
+          case 'toggle': {
+            if (this.isOpen) {
+              this.close()
+            } else {
+              this.open()
+            }
+            break
           }
+          case 'close': {
+            this.close()
+            break
+          }
+          case 'open': {
+            this.open()
+            break
+          }
+          default: {}
         }
       },
       close (event) {
@@ -150,6 +164,7 @@
         this.isOpen = true
         this.ariaHidden = false
         this.$emit('opened')
+        // TODO: añadir aria-hidden true al rootEl
       },
       onAnimationEnd () {
         if (!this.isOpen) {
@@ -161,6 +176,7 @@
 
           this.ariaHidden = true
           this.$emit('closed')
+          // TODO: añadir aria-hidden false al rootEl
         }
       }
     }
