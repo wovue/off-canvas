@@ -20,7 +20,7 @@
         <p>or register the components and the directive with other names.</p>
       </div>
       <div class="c-item__code-wrapper" v-html="snippets.installationCommonjsAlternative2"></div>
-      <h5 class="c-item__sub-heading">Include</h5>
+      <h4 class="c-item__heading">Direct include (Browser)</h4>
       <div class="c-item__description">
         <p>Include it directly with a <code>&lt;script&gt;</code> tag. In this case, you don't need to write <code>Vue.use(OffCanvas)</code>, this will be done automatically for you.</p>
       </div>

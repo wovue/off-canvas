@@ -1,6 +1,10 @@
 @include component('main') {
   background: #f9f9f9;
 
+  a:not([class]) {
+    border-bottom: 1px dotted currentColor;
+  }
+
   @include desde('md') {
     min-height: 45em;
     padding-left: $sidebar-width;
