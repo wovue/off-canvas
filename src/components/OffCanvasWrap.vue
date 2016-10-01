@@ -1,5 +1,5 @@
 <template>
-  <div class="c-off-canvas-wrap">
+  <div class="c-off-canvas-wrap" :style="{overflow: isOpen ? 'hidden' : false}">
     <div class="c-off-canvas-wrap__content" :style="{transform: contentTransform}">
       <slot></slot>
     </div>
