@@ -3,6 +3,28 @@
     <h3 class="c-main__sub-heading u-gutter">Usage</h3>
     <div class="c-item u-gutter">
       <h4 class="c-item__heading">OffCanvas</h4>
+      <div class="c-item__description">
+        <p>First you have to create the <code>OffCanvas</code>, here's an example:</p>
+      </div>
+      <div class="c-item__code-wrapper" v-html="snippets.usageGuide01"></div>
+      <div class="c-item__description">
+        <p>So, now you can call the <code>OffCanvas</code>, there are three ways to handle it:</p>
+      </div>
+      <h5 class="c-item__sub-heading">Using the directive</h5>
+      <div class="c-item__description">
+        <p>The directive will add <code>'aria-expanded'</code> and <code>'aria-controls'</code> A11Y attributes.</p>
+      </div>
+      <div class="c-item__code-wrapper" v-html="snippets.usageGuide02"></div>
+      <h5 class="c-item__sub-heading">Using the <code>$wv</code> instance</h5>
+      <div class="c-item__description">
+        <p>Only available if you installed it as a Plugin.</p>
+      </div>
+      <div class="c-item__code-wrapper" v-html="snippets.usageGuide03"></div>
+      <h5 class="c-item__sub-heading">Importing the functions from src</h5>
+      <div class="c-item__code-wrapper" v-html="snippets.usageGuide04"></div>
+      <div class="c-item__description">
+        <p>Here an examples:</p>
+      </div>
       <h5 class="c-item__sub-heading">Code:</h5>
       <div class="c-item__code-wrapper" v-html="snippets.usage01"></div>
       <div class="c-item__description">
@@ -52,6 +74,10 @@
   import usage01 from 'src-docs/app/snippets/usage-01.md'
   import usage02 from 'src-docs/app/snippets/usage-02.md'
   import usage021 from 'src-docs/app/snippets/usage-021.md'
+  import usageGuide01 from 'src-docs/app/snippets/usage-guide01.md'
+  import usageGuide02 from 'src-docs/app/snippets/usage-guide02.md'
+  import usageGuide03 from 'src-docs/app/snippets/usage-guide03.md'
+  import usageGuide04 from 'src-docs/app/snippets/usage-guide04.md'
 
   export default {
     name: 'HomeUsagePage',
@@ -60,7 +86,11 @@
         snippets: {
           usage01,
           usage02,
-          usage021
+          usage021,
+          usageGuide01,
+          usageGuide02,
+          usageGuide03,
+          usageGuide04
         }
       }
     }

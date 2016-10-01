@@ -40,10 +40,10 @@
           offCanvas: {
             directive: [
               {
-                expression: 'OffCanvas identifier.',
+                expression: 'OffCanvas identifier. (the `ref` prop from the Dialog)',
                 expects: 'String',
-                argument: 'toggle',
-                description: 'Toggle the OffCanvas on click.',
+                argument: 'toggle|open|close',
+                description: 'Toggle|Open|Close the OffCanvas on click.',
                 example: '`<a v-off-canvas:toggle="menu">Link</a>`'
               }
             ],
