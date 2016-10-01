@@ -70,7 +70,7 @@
                 name: 'width',
                 type: '`Number`',
                 required: 'false',
-                default: '`300`',
+                default: '`false`',
                 description: 'OffCanvas `max-width` style rule. (e.g. `300`, `70%`)'
               }, {
                 name: 'wrapRef',
