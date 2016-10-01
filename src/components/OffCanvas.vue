@@ -10,17 +10,17 @@
     ></div>
     <div
       class="c-off-canvas"
+      :class="[class]"
       :style="{maxWidth: offCanvasMaxWidth}"
       v-show="isOpen"
+      v-el:off-canvas
       @animationend="onAnimationEnd"
       :transition="transitionClass"
       :aria-labelledby="ariaLabelledby"
       :role="role"
       :id="ref"
     >
-      <div class="c-off-canvas__content" :class="[class]">
-        <slot></slot>
-      </div>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -45,7 +45,7 @@
       }, {
         name: 'width',
         type: [Number, String],
-        default: 300
+        default: false
       }, {
         name: 'ref',
         type: String,
@@ -83,6 +83,10 @@
         return `wv-off-canvas-${this.align}`
       },
       offCanvasMaxWidth () {
+        if (!this.width) {
+          return false
+        }
+
         if (typeof this.width === 'number') {
           return `${this.width}px`
         }
@@ -152,19 +156,28 @@
           opened: true
         })
 
-        eventBus.emit('toggle:off-canvas-wrap', {
-          wrapRef: this.wrapRef,
-          offCanvasData: {
-            offCanvasWidth: this.offCanvasMaxWidth,
-            offCanvasAlign: this.align
-          },
-          toOpen: true
-        })
-
         this.isOpen = true
         this.ariaHidden = false
         this.$emit('opened')
         // TODO: añadir aria-hidden true al rootEl
+
+        this.$nextTick(() => {
+          this.openWrap()
+        })
+      },
+      openWrap () {
+        // open OffCanvasWrap
+
+        let offCanvasWidth = this.offCanvasMaxWidth || `${this.$els.offCanvas.getBoundingClientRect().width}px`
+
+        eventBus.emit('toggle:off-canvas-wrap', {
+          wrapRef: this.wrapRef,
+          offCanvasData: {
+            offCanvasWidth: offCanvasWidth,
+            offCanvasAlign: this.align
+          },
+          toOpen: true
+        })
       },
       onAnimationEnd () {
         if (!this.isOpen) {
