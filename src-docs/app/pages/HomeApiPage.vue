@@ -85,17 +85,29 @@
                 default: '`"rgba(0, 0, 0, .5)"`',
                 description: 'Overlay background color.'
               }, {
-                name: 'closeOnEsc `new`',
+                name: 'closeOnEsc',
                 type: '`Boolean`',
                 required: 'false',
                 default: '`true`',
                 description: 'This determines if pressing the `esc` key will close the OffCanvas.'
               }, {
-                name: 'closeOnOutsideClick `new`',
+                name: 'closeOnOutsideClick',
                 type: '`Boolean`',
                 required: 'false',
                 default: '`true`',
                 description: 'This determines if clicking on the overlay will close the OffCanvas.'
+              }, {
+                name: 'role `new`',
+                type: '`String`',
+                required: 'false',
+                default: '`false`',
+                description: 'OffCanvas `role` attribute.'
+              }, {
+                name: 'ariaLabelledby `new`',
+                type: '`String`',
+                required: 'false',
+                default: '`false`',
+                description: 'OffCanvas `aria-labelledby` attribute.'
               }
             ],
             events: [
